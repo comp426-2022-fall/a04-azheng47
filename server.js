@@ -7,7 +7,7 @@ const args = minimist(process.argv.slice(2));
 const port = args.port || 5000
 const app = express();
 
-app.use(express.urlencoded( { extended: true }));
+app.use(express.urlencoded({extended: true}));
 app.use(express.json());
 
 app.get('/app/', (req, res) => {
@@ -18,8 +18,8 @@ app.get('/app/roll/', (req, res) => {
 	res.status(200).send(roll(6, 2, 1));
 })
 
-app.get('/app/roll/', (req, res) => {
-	res.status(200).send(roll(parseInt(req.body.sides), parseInt(req.body.dice), parseInt(req.body.rolls)));
+app.post('/app/roll/', (req, res) => {
+	res.status(200).send(roll(req.body.sides, req.body.dice, req.body.rolls));
 })
 
 app.get('/app/roll/:sides/', (req, res) => {
