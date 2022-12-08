@@ -19,7 +19,7 @@ app.get('/app/roll/', (req, res) => {
 })
 
 app.get('/app/roll/:sides/:dice/:rolls/', (req, res) => {
-	res.status(200).send(roll(req.params.sides, req.params.dice, re.params.rolls));
+	res.status(200).send(roll(req.params.sides, req.params.dice, req.params.rolls));
 })
 
 app.listen(port);
