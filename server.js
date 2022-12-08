@@ -18,4 +18,8 @@ app.get('/app/roll/', (req, res) => {
 	res.status(200).send(roll(6, 2, 1));
 })
 
+app.get('/app/roll/:sides/:dice/:rolls/', (req, res) => {
+	res.status(200).send(roll(6, 2, 1));
+})
+
 app.listen(port);
