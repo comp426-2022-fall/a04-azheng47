@@ -15,7 +15,7 @@ app.get('/app/', (req, res) => {
 })
 
 app.get('/app/roll/', (req, res) => {
-	res.status(200).send(roll(2, 6, 1));
+	res.status(200).send(roll(6, 2, 1));
 })
 
 app.listen(port);
