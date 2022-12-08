@@ -22,6 +22,10 @@ app.get('/app/roll/', (req, res) => {
 	res.status(200).send(roll(parseInt(req.body.sides), parseInt(req.body.dice), parseInt(req.body.rolls)));
 })
 
+app.get('/app/roll/:sides/', (req, res) => {
+	res.status(200).send(roll(req.params.sides, 2, 1));
+})
+
 app.get('/app/roll/:sides/:dice/:rolls/', (req, res) => {
 	res.status(200).send(roll(req.params.sides, req.params.dice, req.params.rolls));
 })
